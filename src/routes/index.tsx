@@ -11,7 +11,6 @@ import {
   HeartPulse,
   Home,
   Search,
-  SquareMenu,
   Volume2,
   VolumeX,
 } from "lucide-react";
@@ -146,10 +145,10 @@ function Index() {
           <aside className="lg:w-72 lg:shrink-0">
             <div className="rounded-3xl bg-ink p-4 deep-shadow lg:sticky lg:top-4">
               <p className="px-2 pb-3 pt-1 font-display text-sm font-bold uppercase text-sun">Escolha um serviço</p>
-              <nav className="flex gap-2 overflow-x-auto pb-2 lg:flex-col lg:overflow-visible" aria-label="Serviços disponíveis">
+              <nav className="grid grid-cols-2 gap-2 pb-2 sm:grid-cols-3 lg:flex lg:flex-col" aria-label="Serviços disponíveis">
                 {services.map((item) => (
-                  <Button key={item.id} onClick={() => chooseService(item.id)} aria-current={serviceId === item.id ? "page" : undefined} className={`flex shrink-0 items-center gap-3 px-3 py-3 text-left text-paper lg:w-full ${serviceId === item.id ? "bg-paper/20 ring-2 ring-sun" : "bg-transparent hover:bg-paper/10"}`}>
-                    <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-paper/10 text-sm">{item.short}</span><span>{item.title}</span>
+                  <Button key={item.id} onClick={() => chooseService(item.id)} aria-current={serviceId === item.id ? "page" : undefined} className={`flex min-w-0 items-center gap-2 px-2 py-3 text-left text-paper lg:w-full lg:gap-3 lg:px-3 ${serviceId === item.id ? "bg-paper/20 ring-2 ring-sun" : "bg-transparent hover:bg-paper/10"}`}>
+                    <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-paper/10 text-xs lg:size-10 lg:text-sm">{item.short}</span><span className="min-w-0 text-sm leading-tight lg:text-base">{item.title}</span>
                   </Button>
                 ))}
               </nav>
